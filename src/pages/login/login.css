@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
+
+
+.error-active {
+    color: #D8000C;
+    font-family: sans-serif;
+    opacity: 100;
+}
+
+.error-inactive {
+    color: #D8000C;
+    font-family: sans-serif;
+    opacity: 0;
+}
+
+.input-label {
+    color: #595B6A;
+}
+.login-banner {
+    background: url('../../images/grace-o-driscoll-auKMC7ZvUhU-unsplash.jpg') no-repeat center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.enabled {
+    border: none;
+    margin-top: 3vh;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    background-color: #BC9E71;
+    font-size: 1.2rem;
+    height: 5vh;
+    border-radius: 10px;
+}
+
+.disabled {
+    border: none;
+    margin-top: 3vh;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    background-color: #BC9E71;
+    font-size: 1.2rem;
+    height: 5vh;
+    border-radius: 10px;
+    opacity: .5;
+    pointer-events: none;
+}
+
+.login-container {
+    height: 100vh;
+}
+
+.login-form {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15vh;
+    font-family: 'Roboto' , sans-serif;
+}
+
+.login-input {
+    display: block;
+    width: 70%;
+    height: 5vh;
+    border-radius: 10px;
+    border: 1px solid #E4E4E4;
+    background-color: #E4E4E4;
+    padding-left: 10px;
+    font-weight: 400;
+}
+
+.login-title {
+    font-size: 5rem;
+    color: #5C5C5C;
+}
+
+.username-container {
+    margin-top: 4vh;
+}
+
+.password-container {
+    margin-top: 2vh;
+}
+
+/**
+    animation
+*/
+
+.login-input:focus {
+    outline: #ffffff;
+}
