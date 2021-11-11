@@ -1,0 +1,7 @@
+.dashboard {
+    display: flex;
+}
+
+.dashboard div:nth-of-type(2) {
+    flex-grow: 1;
+}
