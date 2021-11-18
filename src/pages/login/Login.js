@@ -43,10 +43,10 @@ const Login = () => {
             username: username,
             password: password
         }}).then((response) => {
-            return response.status;
-        }).then((status) => {
-            if (status === 200) {
-                navigate('/overview')
+            console.log(response);
+            if (response.status === 200) {
+                window.localStorage.setItem('userId', response.data.message[0].user_id);
+                navigate('/overview');
             }
         }).catch((error) => {
             setModalShow(true);

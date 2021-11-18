@@ -5,8 +5,8 @@ import { useState } from 'react';
 import './navbar.css';
 
 const Navbar = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
+  const currentNavbarPosition = localStorage.getItem('currentNavIndex') === null ? 0 : parseInt(localStorage.getItem('currentNavIndex'));
+  const [currentIndex, setCurrentIndex] = useState(currentNavbarPosition);
   return(
     <div className="navigation-container col-md-4 col-xl-2">
       <h3 className="banner">Wongso Farm</h3>
@@ -17,7 +17,7 @@ const Navbar = () => {
                   <li key={index} className={index === currentIndex ? item.cName + " active" : item.cName}>
                     <Link to={item.path} onClick={() => {
                       setCurrentIndex(index);
-                      console.log(currentIndex);
+                      localStorage.setItem('currentNavIndex', index);
                     }}>
                       {item.icon}
                       <span className="menu-title">{item.title}</span>
@@ -30,6 +30,6 @@ const Navbar = () => {
     </div>
   )
 }
-//
+
 
 export default Navbar;
