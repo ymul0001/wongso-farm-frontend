@@ -21,7 +21,6 @@ const Expenditure = () => {
     const handleSortOrderChange = (e) => {
         setSortOrder(e.target.value);
         tableRef.current.onQueryChange()
-        console.log(sortOrder);
     };
 
     const expenditureColumns = [
@@ -78,7 +77,7 @@ const Expenditure = () => {
                     data={query =>
                             new Promise((resolve, reject) => {
                                 axios.get('https://wongso-farm-api.herokuapp.com/v1/expenditure/findByUserIdPaginated',{params: {
-                                    userid: localStorage.getItem("userId"), //todo: change userId to dynamically retrieved from the web page
+                                    userid: localStorage.getItem("userId"), 
                                     sortorder: sortOrder,
                                     page: query.page + 1,
                                     limit: query.pageSize
