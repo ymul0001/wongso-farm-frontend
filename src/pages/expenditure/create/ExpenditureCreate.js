@@ -39,7 +39,7 @@ const ExpenditureCreate = (props) => {
     const create = (e) => {
         e.preventDefault();
         axios.post('https://wongso-farm-api.herokuapp.com/v1/expenditure/create', {
-            userid: 'c58665af-1318-4a31-b11a-0f2b810eb3ac', //todo: change userId to dynamically retrieved from the web page,
+            userid: localStorage.getItem("userId"),
             expensedate: date,
             totalexpense: totalExpense,
             productiveexpense: productiveExpense,

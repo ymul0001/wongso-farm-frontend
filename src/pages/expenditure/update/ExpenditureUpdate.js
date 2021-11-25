@@ -42,7 +42,7 @@ const ExpenditureUpdate = (props) => {
     const update = (e) => {
         e.preventDefault();
         axios.put(`https://wongso-farm-api.herokuapp.com/v1/expenditure/updateById?expenseid=${state.expense_id}`, {
-            userid: 'c58665af-1318-4a31-b11a-0f2b810eb3ac', //todo: change userId to dynamically retrieved from the web page,
+            userid: localStorage.getItem("userId"),
             expensedate: date,
             totalexpense: totalExpense,
             productiveexpense: productiveExpense,
