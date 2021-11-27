@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
+
+
+.date-container {
+    margin-top: 3vh;
+}
+
+.sales-form-container {
+    background-color: #F1E7D7;
+    height: 80vh;
+    margin-top: 5vh;
+}
+
+.sales-form {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3vh;
+}
+
+.sales-input {
+    display: block;
+    width: 30%;
+    height: 5vh;
+    border: none;
+    padding-left: 8px;
+}
+
+.sales-title {
+    color: #66553C;
+}
+
+.error-active {
+    color: #D8000C;
+    font-family: sans-serif;
+    opacity: 100;
+}
+
+.error-inactive {
+    color: #D8000C;
+    font-family: sans-serif;
+    opacity: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.create-btn-enabled {
+    float: right;
+    margin-top: 3vh;
+    width: 15%;
+    height: 5vh;
+    font-size: 1.2rem;
+    border: none;
+    color: #ffffff;
+    transition: all .1s;
+}
+
+.create-btn-disabled {
+    float: right;
+    margin-top: 3vh;
+    width: 15%;
+    height: 5vh;
+    font-size: 1.2rem;
+    border: none;
+    color: #ffffff;
+    transition: all .1s;
+    opacity: .5;
+    pointer-events: none;
+}
+
+/*animation*/
+
+.expenditure-input:focus {
+    outline: none
+}
