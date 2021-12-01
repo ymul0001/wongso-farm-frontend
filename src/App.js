@@ -23,8 +23,8 @@ function App() {
               <Route path='customer/create' element={<CustomerCreate title='Customer Management > Create' btnLabel='CREATE'/>}/>
               <Route path='customer/update/:id' element={<CustomerUpdate title='Customer Management > Update' btnLabel='UPDATE'/>}/>
               <Route path='sales' element={<SalesManagement/>}/>
-              <Route path='sales/create' element={<SalesCreate title='Sales > Create' btnLabel='CREATE'/>}/>
-              <Route path='sales/update/:id' element={<SalesUpdate title='Sales > Update' btnLabel='UPDATE'/>}/>
+              <Route path='sales/create' element={<SalesCreate title='Sales Management > Create' btnLabel='CREATE'/>}/>
+              <Route path='sales/update/:id' element={<SalesUpdate title='Sales Management > Update' btnLabel='UPDATE'/>}/>
               <Route path='expenditure' element={<Expenditure/>}/>
               <Route path='expenditure/create' element={<ExpenditureCreate title='Expenditure > Create' btnLabel='CREATE'/>}/>
               <Route path='expenditure/update/:id' element={<ExpenditureUpdate title='Expenditure > Update' btnLabel='UPDATE'/>}/>
