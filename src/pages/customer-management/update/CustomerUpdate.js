@@ -44,6 +44,7 @@ const CustomerUpdate = (props) => {
                 navigate('/customer')
             }
         }).catch((error) => {
+            setTwoWayModalShow(false);
             setModalShow(true);
             setErrorMessage(error.response.data.message);
         });

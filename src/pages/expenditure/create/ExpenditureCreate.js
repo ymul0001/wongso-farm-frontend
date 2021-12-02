@@ -51,6 +51,7 @@ const ExpenditureCreate = (props) => {
                 navigate('/expenditure')
             }
         }).catch((error) => {
+            setTwoWayModalShow(false);
             setModalShow(true);
             setErrorMessage(error.response.data.message);
         });

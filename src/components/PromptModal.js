@@ -18,7 +18,7 @@ const PromptModal = (props) => {
             <p>
               {props.desc}
             </p>
-            <Button className="float-end" variant="danger" onClick={props.onHide}>Close</Button>
+            <Button className="float-end" variant="danger" style={{border: "none", borderRadius: "0px", marginLeft: "2%", width: "10%", height: "4vh"}} onClick={props.onHide}>Close</Button>
           </Modal.Body>
         </Modal>
       );
