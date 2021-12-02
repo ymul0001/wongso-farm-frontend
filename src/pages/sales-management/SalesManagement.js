@@ -99,7 +99,7 @@ const SalesManagement = () => {
                         data={query =>
                                 new Promise((resolve, reject) => {
                                     axios.get('https://wongso-farm-api.herokuapp.com/v1/sales/findByUserIdPaginated',{params: {
-                                        userid: "c58665af-1318-4a31-b11a-0f2b810eb3ac", //TODO: Change user id to retrieve from local storage
+                                        userid: localStorage.getItem("userId"),
                                         sortkey: sortKey,
                                         sortorder: sortOrder,
                                         page: query.page + 1,

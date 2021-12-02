@@ -43,6 +43,7 @@ const Expenditure = () => {
                 window.location.reload();
             }
         }).catch((error) => {
+            setTwoWayModalShow(false);
             setModalShow(true);
             setErrorMessage(error.response.data.message);
         });

@@ -34,22 +34,6 @@ const SalesCreate = (props) => {
         })
     } 
 
-    // const filterCustomerNames = (inputValue) => {
-    //     if (inputValue) {
-    //         return customerNames.filter(row => row.customer_name.toLowerCase().includes(inputValue.toLowerCase()));
-    //     }
-    //     //console.log(customerNames.filter(row => row.customer_name.toLowerCase().indexOf(inputValue) != -1));
-    //     return customerNames;
-    //     //return customerNames.filter(row => row.customer_name.toLowerCase().indexOf(inputValue) != -1);
-    // };
-
-    // const promiseOptions = (inputValue) =>
-    //     new Promise((resolve) => {
-    //         setTimeout(() => {
-    //             resolve(filterCustomerNames(inputValue));
-    //         }, 1000);
-    // });
-
     const getSalesDate = (e) => {
         setSalesDate(e.target.value);
     }
@@ -93,10 +77,9 @@ const SalesCreate = (props) => {
 
     const create = (e) => {
         e.preventDefault();
-        getCustomerId();
         axios.post('https://wongso-farm-api.herokuapp.com/v1/sales/create', {
             customerid: customerId,
-            userid: "c58665af-1318-4a31-b11a-0f2b810eb3ac", //TODO: Change user id to retrieve from local storage
+            userid: localStorage.getItem("userId"),
             salesdate: salesDate,
             level: level,
             qty: totalOrder,
@@ -142,6 +125,7 @@ const SalesCreate = (props) => {
 
     const toggleConfirmation = (e) => {
         e.preventDefault();
+        getCustomerId();
         setTwoWayModalShow(true);
     }
 
