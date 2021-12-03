@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
+
+.overall-profit {
+    display: flex;
+    height: 22vh;
+    width: 55%;
+    margin-top: 5vh;
+    margin-left: 3%;
+}
+
+.gross-profit-container,
+.net-profit-container {
+    text-align: center;
+}
+.gross-profit-container {
+    background: #bda345;
+}
+
+.net-profit-container {
+    background: #D28A47;
+}
+
+.profit-title,
+.profit-details {
+    color: #ffffff;
+}
+
+.profit-title {
+    font-size: 2rem;
+    margin-top: 3vh;
+}
+
+.profit-details {
+    font-size: 4rem;
+    display: block;
+    margin-top: 3vh;
+}
+
+.sales-per-month {
+    margin-top: 7vh;
+    width: 93%;
+    height: 55vh;
+    padding-top: 3vh;
+    padding-left: 1%;
+    margin-left: 3%;
+    background: rgb(245, 245, 245);
+}
+
+.sales-month-title {
+    color:  #66553C;
+    margin-bottom: 3vh;
+}
