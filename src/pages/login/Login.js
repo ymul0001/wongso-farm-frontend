@@ -2,10 +2,12 @@ import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import './login.css'
 import PromptModal from '../../components/PromptModal';
+import Loading from '../loading/Loading';
 import {useNavigate} from 'react-router-dom';
 
 
 const Login = () => {
+    const [isLoaded, setIsLoaded] = useState(undefined);
     const [username, setUsername] = useState("initial");
     const [password, setPassword] = useState("initial");
     const [usernameState, setUsernameState] = useState("");
@@ -39,11 +41,12 @@ const Login = () => {
 
     const login = (e) => {
         e.preventDefault();
+        setIsLoaded(false);
         axios.get('https://wongso-farm-api.herokuapp.com/v1/credential/findByUserNameAndPassword',{params: {
             username: username,
             password: password
         }}).then((response) => {
-            console.log(response);
+            setIsLoaded(true);
             if (response.status === 200) {
                 window.sessionStorage.setItem('userId', response.data.message[0].user_id);
                 navigate('/overview');
@@ -66,6 +69,9 @@ const Login = () => {
         enableLoginBtn();
     })
     
+    if (isLoaded != undefined && !isLoaded) {
+        return(<Loading/>);
+    }
     return (
         <div className="login-page">
             <div className="login-banner col-sm-6">
