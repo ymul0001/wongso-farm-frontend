@@ -20,7 +20,7 @@ const Overview = () => {
 
     const getGrossProfit = () => {
         axios.get('https://wongso-farm-api.herokuapp.com/v1/dashboard/findGrossProfit',{params: {
-            userid: 'c58665af-1318-4a31-b11a-0f2b810eb3ac',
+            userid: localStorage.getItem("userId"),
         }})
         .then(result => {
             setGrossProfit(result.data.message[0].gross_profit)
@@ -29,7 +29,7 @@ const Overview = () => {
 
     const getNetProfit = () => {
         axios.get('https://wongso-farm-api.herokuapp.com/v1/dashboard/findNetProfit',{params: {
-            userid: 'c58665af-1318-4a31-b11a-0f2b810eb3ac',
+            userid: localStorage.getItem("userId"),
         }})
         .then(result => {
             setNetProfit(result.data.message[0].net_profit)
@@ -38,7 +38,7 @@ const Overview = () => {
 
     const getSalesPerMonth = () => {
         axios.get('https://wongso-farm-api.herokuapp.com/v1/dashboard/findSalesPerMonth',{params: {
-            userid: 'c58665af-1318-4a31-b11a-0f2b810eb3ac',
+            userid: localStorage.getItem("userId"),
         }})
         .then(result => {
             const processedResults = result.data.message.map(row => {
