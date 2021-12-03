@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../../../components/header/Header';
 import PromptModal from '../../../components/PromptModal';
@@ -47,7 +47,7 @@ const SalesUpdate = (props) => {
 
     const getCustomerNames = () => {
         axios.get('https://wongso-farm-api.herokuapp.com/v1/customer/findCustomerNamesByUserId?', {params: {
-            userid: 'c58665af-1318-4a31-b11a-0f2b810eb3ac' //TODO: Change user id to retrieve from local storage
+            userid: sessionStorage.getItem("userId")
         }})
         .then((result) => {
             setCustomerNames(result.data.message);
@@ -119,6 +119,10 @@ const SalesUpdate = (props) => {
         e.preventDefault();
         getCustomerId();
         setTwoWayModalShow(true);
+    }
+
+    if (sessionStorage.getItem("userId") === null) {
+        return <Navigate to="/login" />
     }
 
     return(

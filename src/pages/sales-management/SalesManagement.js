@@ -2,7 +2,7 @@ import {React, useState, useRef} from 'react';
 import moment from 'moment';
 import MaterialTable from 'material-table';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import Button from '@mui/material/Button';
 import SearchBar from 'material-ui-search-bar';
@@ -57,6 +57,10 @@ const SalesManagement = () => {
         {title: 'Total sales', field: 'total_price', cellStyle: { width: "20%" }}
     ]
 
+    if (sessionStorage.getItem("userId") === null) {
+        return <Navigate to="/login" />
+    }
+
     return(
         <div className="sales-management">
             <Header title="Sales Management"/>
@@ -99,7 +103,7 @@ const SalesManagement = () => {
                         data={query =>
                                 new Promise((resolve, reject) => {
                                     axios.get('https://wongso-farm-api.herokuapp.com/v1/sales/findByUserIdPaginated',{params: {
-                                        userid: localStorage.getItem("userId"),
+                                        userid: sessionStorage.getItem("userId"),
                                         sortkey: sortKey,
                                         sortorder: sortOrder,
                                         page: query.page + 1,

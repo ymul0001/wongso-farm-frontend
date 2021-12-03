@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import AsyncSelect from 'react-select/async';
 import axios from 'axios';
 import Header from '../../../components/header/Header';
@@ -79,7 +79,7 @@ const SalesCreate = (props) => {
         e.preventDefault();
         axios.post('https://wongso-farm-api.herokuapp.com/v1/sales/create', {
             customerid: customerId,
-            userid: localStorage.getItem("userId"),
+            userid: sessionStorage.getItem("userId"),
             salesdate: salesDate,
             level: level,
             qty: totalOrder,
@@ -127,6 +127,10 @@ const SalesCreate = (props) => {
         e.preventDefault();
         getCustomerId();
         setTwoWayModalShow(true);
+    }
+
+    if (sessionStorage.getItem("userId") === null) {
+        return <Navigate to="/login" />
     }
 
     return(

@@ -45,7 +45,7 @@ const Login = () => {
         }}).then((response) => {
             console.log(response);
             if (response.status === 200) {
-                window.localStorage.setItem('userId', response.data.message[0].user_id);
+                window.sessionStorage.setItem('userId', response.data.message[0].user_id);
                 navigate('/overview');
             }
         }).catch((error) => {
@@ -67,7 +67,7 @@ const Login = () => {
     })
     
     return (
-        <div className="login-page row">
+        <div className="login-page">
             <div className="login-banner col-sm-6">
             </div>
             <div className="login-container col-sm-6">

@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../../../components/header/Header';
 import PromptModal from '../../../components/PromptModal';
@@ -76,6 +76,10 @@ const CustomerUpdate = (props) => {
     useEffect(() => {
         enableCustomerUpdateBtn();
     })
+
+    if (sessionStorage.getItem("userId") === null) {
+        return <Navigate to="/login" />
+    }
 
     return(
         <div className="details">

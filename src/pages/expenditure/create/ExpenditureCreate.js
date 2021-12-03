@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import axios from "axios";
 import Header from '../../../components/header/Header';
 import PromptModal from '../../../components/PromptModal';
@@ -39,7 +39,7 @@ const ExpenditureCreate = (props) => {
     const create = (e) => {
         e.preventDefault();
         axios.post('https://wongso-farm-api.herokuapp.com/v1/expenditure/create', {
-            userid: localStorage.getItem("userId"),
+            userid: sessionStorage.getItem("userId"),
             expensedate: date,
             totalexpense: totalExpense,
             productiveexpense: productiveExpense,
@@ -91,6 +91,10 @@ const ExpenditureCreate = (props) => {
     useEffect(() => {
         enableExpenditureBtn();
     })
+
+    if (sessionStorage.getItem("userId") === null) {
+        return <Navigate to="/login" />
+    }
 
     return(
         <div className="details">
