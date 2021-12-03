@@ -20,6 +20,11 @@
     background: url('../../images/grace-o-driscoll-auKMC7ZvUhU-unsplash.jpg') no-repeat center;
     background-size: cover;
     height: 100vh;
+    padding: 0 !important;
+}
+
+.login-page {
+    display: flex;
 }
 
 .enabled {
@@ -48,6 +53,7 @@
 
 .login-container {
     height: 100vh;
+    padding: 0 !important;
 }
 
 .login-form {

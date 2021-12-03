@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Navigate } from 'react-router-dom';
 import axios from "axios";
 import Header from '../../../components/header/Header';
 import PromptModal from '../../../components/PromptModal';
@@ -42,7 +42,7 @@ const ExpenditureUpdate = (props) => {
     const update = (e) => {
         e.preventDefault();
         axios.put(`https://wongso-farm-api.herokuapp.com/v1/expenditure/updateById?expenseid=${state.expense_id}`, {
-            userid: localStorage.getItem("userId"),
+            userid: sessionStorage.getItem("userId"),
             expensedate: date,
             totalexpense: totalExpense,
             productiveexpense: productiveExpense,
@@ -89,6 +89,10 @@ const ExpenditureUpdate = (props) => {
     useEffect(() => {
         enableExpenditureBtn();
     })
+
+    if (sessionStorage.getItem("userId") === null) {
+        return <Navigate to="/login" />
+    }
 
     return(
         <div className="details">

@@ -1,5 +1,5 @@
 import {React, useState, useRef} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import axios from "axios";
 import moment from "moment";
@@ -49,6 +49,10 @@ const Expenditure = () => {
         });
     }
 
+    if (sessionStorage.getItem("userId") === null) {
+        return <Navigate to="/login" />
+    }
+
     return(
         <div className="expenditure">
             <Header title="Expenditure"/>
@@ -78,7 +82,7 @@ const Expenditure = () => {
                     data={query =>
                             new Promise((resolve, reject) => {
                                 axios.get('https://wongso-farm-api.herokuapp.com/v1/expenditure/findByUserIdPaginated',{params: {
-                                    userid: localStorage.getItem("userId"), 
+                                    userid: sessionStorage.getItem("userId"), 
                                     sortorder: sortOrder,
                                     page: query.page + 1,
                                     limit: query.pageSize

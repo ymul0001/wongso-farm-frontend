@@ -1,5 +1,5 @@
 import {React, useState, useRef} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import axios from "axios";
 import Header from '../../components/header/Header';
 import Button from '@mui/material/Button';
@@ -55,6 +55,10 @@ const CustomerManagement = () => {
         });
     }
 
+    if (sessionStorage.getItem("userId") === null) {
+        return <Navigate to="/login" />
+    }
+
     return(
         <div className="customer-management">
             <Header title="Customer Management"/>
@@ -99,7 +103,7 @@ const CustomerManagement = () => {
                         data={query =>
                                 new Promise((resolve, reject) => {
                                     axios.get('https://wongso-farm-api.herokuapp.com/v1/customer/findByUserIdPaginated',{params: {
-                                        userid: localStorage.getItem("userId"),
+                                        userid: sessionStorage.getItem("userId"),
                                         sortkey: sortKey,
                                         sortorder: sortOrder,
                                         page: query.page + 1,
