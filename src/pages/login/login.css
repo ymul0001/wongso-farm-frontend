@@ -63,7 +63,7 @@
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15vh;
+    margin-top: 12vh;
     font-family: 'Roboto' , sans-serif;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .login-title {
-    font-size: 5rem;
+    font-size: 4rem;
     color: #5C5C5C;
 }
 
