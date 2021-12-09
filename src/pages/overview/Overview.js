@@ -78,7 +78,7 @@ const Overview = () => {
             <div className="sales-per-month">
                 <h3 className="sales-month-title">Sales trend per month</h3>
                 {salesPerMonth.length > 0 && 
-                <ResponsiveContainer width="95%" height={500}>
+                <ResponsiveContainer width="95%" height={300}>
                     <LineChart
                         width={1500}
                         data={salesPerMonth}

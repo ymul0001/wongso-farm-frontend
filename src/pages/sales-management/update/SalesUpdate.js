@@ -136,7 +136,6 @@ const SalesUpdate = (props) => {
                     <input type="text" id="sales-date" name="sales-date" className="sales-input" placeholder="ex: 2021-11-13 14:47:28" value={salesDate}  onChange={getSalesDate}/>
                     <span className={salesDateState}>sales date cannot be empty</span>
                 </div>
-                <br/>
                 <div className="customer-name-container">
                     <label htmlFor="customer-name" className="sales-input-label">CUSTOMER NAME</label>
                     <input autocomplete="off" type="text" id="customer-name" name="customer-name" className="sales-input" value= {customerName} onChange={getCustomerName} list="suggestions"/>
@@ -147,28 +146,24 @@ const SalesUpdate = (props) => {
                     </datalist>
                     <span className={customerNameState}>customer name cannot be empty</span>
                 </div>
-                <br/>
                 <div className="level-container">
-                    <label for="level-selection">LEVEL</label>
+                    <label for="level-selection" className="sales-input-label">LEVEL</label>
                     <select name="level-selection" id="level-selection" className="sales-input" value={level} onChange={getLevel}>
                         <option value="piece">piece</option>
                         <option value="kg">kg</option>
                     </select>
-                </div>
+                </div> 
                 <br/>
-                <br/>   
                 <div className="total-order-container">
                     <label htmlFor="total-order" className="sales-input-label">TOTAL ORDER</label>
                     <input type="number" id="total-order" name="total-order" className="sales-input" value={totalOrder} onChange={getTotalOrder}/>
                     <span className={totalOrderState}>total order cannot be empty</span>
                 </div>
-                <br/>
                 <div className="price-unit-container">
                     <label htmlFor="total-order" className="sales-input-label">PRICE PER UNIT</label>
                     <input type="number" id="total-order" name="total-order" className="sales-input" value={pricePerUnit} onChange={getPricePerUnit}/>
                     <span className={pricePerUnitState}>price per unit cannot be empty</span>
                 </div>
-                <br/>
                 <button type="submit" style={{backgroundColor: '#A49F2E'}} className={`create-btn-${submitButtonState} col-sm-3`} onClick={toggleConfirmation}>{props.btnLabel}</button>`
             </form>
         </div>

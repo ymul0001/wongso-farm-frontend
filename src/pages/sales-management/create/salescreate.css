@@ -6,7 +6,6 @@
 
 .sales-form-container {
     background-color: #F1E7D7;
-    height: 80vh;
     margin-top: 5vh;
 }
 
@@ -19,7 +18,7 @@
 
 .sales-input {
     display: block;
-    width: 30%;
+    width: 40% !important;
     height: 5vh;
     border: none;
     padding-left: 8px;
@@ -27,6 +26,12 @@
 
 .sales-title {
     color: #66553C;
+    font-size: 1.5rem;
+}
+
+.sales-input-label {
+    font-size: .8rem;
+    margin-bottom: 1vh;
 }
 
 .error-active {
@@ -53,18 +58,18 @@ input[type='number'] {
 
 .create-btn-enabled {
     float: right;
-    margin-top: 3vh;
     width: 15%;
     height: 5vh;
     font-size: 1.2rem;
     border: none;
     color: #ffffff;
     transition: all .1s;
+    margin-top: 0 !important;
+    font-size: .9rem !important;
 }
 
 .create-btn-disabled {
     float: right;
-    margin-top: 3vh;
     width: 15%;
     height: 5vh;
     font-size: 1.2rem;
@@ -73,6 +78,8 @@ input[type='number'] {
     transition: all .1s;
     opacity: .5;
     pointer-events: none;
+    margin-top: 0 !important;
+    font-size: .9rem !important;
 }
 
 /*animation*/

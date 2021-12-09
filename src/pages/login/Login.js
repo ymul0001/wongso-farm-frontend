@@ -82,13 +82,13 @@ const Login = () => {
                     <div className="username-container">
                         <label htmlFor="username" className="input-label">USERNAME</label> 
                         <br/>
-                        <input type="text" id="username" name="username" className="login-input" onChange={getUsername}/>
+                        <input autocomplete="off" type="text" id="username" name="username" className="login-input" onChange={getUsername}/>
                         <span className={usernameState}>username cannot be empty</span>
                     </div>
                     <div className="password-container">
                         <label htmlFor="password" className="input-label">PASSWORD</label>
                         <br />
-                        <input type="password" id="password" name="password" className="login-input" onChange={getPassword}/>
+                        <input autocomplete="off" type="password" id="password" name="password" className="login-input" onChange={getPassword}/>
                         <span className={passwordState}>password cannot be empty</span>
                     </div>
                     <br />
