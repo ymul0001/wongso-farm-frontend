@@ -12,6 +12,7 @@
 .net-profit-container {
     text-align: center;
 }
+
 .gross-profit-container {
     background: #bda345;
 }
@@ -26,18 +27,18 @@
 }
 
 .profit-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 3vh;
 }
 
 .profit-details {
-    font-size: 4rem;
+    font-size: 2rem;
     display: block;
     margin-top: 3vh;
 }
 
 .sales-per-month {
-    margin-top: 7vh;
+    margin-top: 5vh;
     width: 93%;
     height: 55vh;
     padding-top: 3vh;

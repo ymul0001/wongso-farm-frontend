@@ -92,13 +92,11 @@ const CustomerUpdate = (props) => {
                     <input type="text" id="customer-initial" name="customer-initial" className="customer-input" value={customerInitial} onChange={getCustomerInitial}/>
                     <span className={customerInitialState}>customer initial cannot be empty</span>
                 </div>
-                <br/>
                 <div className="customer-name-container">
                     <label htmlFor="customer-name" className="customer-input-label">CUSTOMER NAME</label>
                     <input type="text" id="customer-name" name="customer-name" className="customer-input" value={customerName} onChange={getCustomerName}/>
                     <span className={customerNameState}>customer name cannot be empty</span>
                 </div>
-                <br/>
                 <div className="customer-address-container">
                     <label htmlFor="customer-address" className="customer-input-label">CUSTOMER ADDRESS</label>
                     <input type="text" id="customer-address" name="customer-address" className="customer-input" value={customerAddress} onChange={getCustomerAddress}/>

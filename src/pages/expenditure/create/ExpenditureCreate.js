@@ -107,19 +107,16 @@ const ExpenditureCreate = (props) => {
                         <input type="text" id="date" name="expense-date" className="expenditure-input" placeholder="ex: 2021-11-13 14:47:28" onChange={getExpenseDate}/>
                         <span className={dateState}>expenditure date cannot be empty</span>
                     </div>
-                    <br/>
                     <div className="total-expense-container">
                         <label htmlFor="total-expense" className="expenditure-input-label">TOTAL EXPENSE</label>
                         <input type="number" id="total-expense" name="total-expense" className="expenditure-input" onChange={getTotalExpense}/>
                         <span className={totalExpenseState}>total expense cannot be empty</span>
                     </div>
-                    <br/>
                     <div className="productive-expense-container">
                         <label htmlFor="productive-expense" className="expenditure-input-label">PRODUCTIVE EXPENSE</label>
                         <input type="number" id="productive-expense" name="productive-expense" className="expenditure-input" onChange={getProductiveExpense}/>
                         <span className={productiveExpenseState}>productive expense cannot be empty</span>
                     </div>
-                    <br/>
                     <div className="expense-note-container">
                         <label htmlFor="expense-note" className="expenditure-input-label">EXPENSE NOTE</label>
                         <input type="text" id="expense-note" name="expense-note" className="expenditure-input" onChange={getExpenseNote}/>

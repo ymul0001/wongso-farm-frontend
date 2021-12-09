@@ -5,6 +5,8 @@
     display: block;
     font-family: 'Roboto', sans-serif;
     border-radius: 3px;
+    font-size: 14px;
+    width: 10%;
     border: 1px solid #a6a6a6;
 }
 
@@ -19,6 +21,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 3vh !important;
+    margin-bottom: 3vh !important;
 }
 
 .options {

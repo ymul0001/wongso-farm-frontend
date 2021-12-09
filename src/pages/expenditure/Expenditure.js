@@ -64,7 +64,7 @@ const Expenditure = () => {
                         backgroundColor: "#A0865E",
                         color: "#ffffff",
                         height: "5vh",
-                        fontSize: "18px"
+                        fontSize: "14px"
                     }} 
                     variant="contained" 
                     onClick={() => navigate('create')}>Create New</Button>
@@ -124,12 +124,12 @@ const Expenditure = () => {
                         headerStyle: {
                             backgroundColor: '#E7E7E7',
                             fontWeight: 700,
-                            fontSize: '1.2rem',
+                            fontSize: '1rem',
                             color: '#80715c'
                         },
                         rowStyle: {
                             backgroundColor: '#F9F9FC',
-                            fontSize: '1.2rem'
+                            fontSize: '.9rem'
                         },
                         actionsColumnIndex: -1
                     }}

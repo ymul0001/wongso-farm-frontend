@@ -20,14 +20,20 @@
 
 .customer-input {
     display: block;
-    width: 30%;
+    width: 40%;
     height: 5vh;
     border: none;
     padding-left: 8px;
 }
 
+.customer-input-label {
+    font-size: .8rem;
+    margin-bottom: 1vh;
+}
+
 .customer-title {
     color: #66553C;
+    font-size: 1.5rem;
 }
 
 .error-active {
@@ -54,10 +60,10 @@ input[type='number'] {
 
 .create-btn-enabled {
     float: right;
-    margin-top: 3vh;
+    margin-top: 10vh !important;
     width: 15%;
     height: 5vh;
-    font-size: 1.2rem;
+    font-size: .9rem !important;
     border: none;
     color: #ffffff;
     transition: all .1s;
@@ -65,10 +71,10 @@ input[type='number'] {
 
 .create-btn-disabled {
     float: right;
-    margin-top: 3vh;
+    margin-top: 10vh !important;
     width: 15%;
     height: 5vh;
-    font-size: 1.2rem;
+    font-size: .9rem !important;
     border: none;
     color: #ffffff;
     transition: all .1s;

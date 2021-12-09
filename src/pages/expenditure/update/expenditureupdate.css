@@ -1,3 +1,12 @@
 /*
     Expenditure form for the update temporarily can be updated in the expenditurecreate.css
 */
+.expenditure-title {
+    color: #66553C;
+    font-size: 1.5rem;
+}
+
+.expenditure-input-label {
+    font-size: .8rem;
+    margin-bottom: 1vh;
+}

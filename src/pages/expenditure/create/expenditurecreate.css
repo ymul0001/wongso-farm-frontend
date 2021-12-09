@@ -7,7 +7,7 @@
 
 .expenditure-form-container {
     background-color: #F1E7D7;
-    height:65vh;
+    height:70vh;
     margin-top: 5vh;
 }
 
@@ -26,8 +26,14 @@
     padding-left: 8px;
 }
 
+.expenditure-input-label {
+    font-size: .8rem;
+    margin-bottom: 1vh;
+}
+
 .expenditure-title {
     color: #66553C;
+    font-size: 1.5rem;
 }
 
 .error-active {
@@ -54,7 +60,6 @@ input[type='number'] {
 
 .create-btn-enabled {
     float: right;
-    margin-top: 3vh;
     width: 15%;
     height: 5vh;
     font-size: 1.2rem;
@@ -65,7 +70,6 @@ input[type='number'] {
 
 .create-btn-disabled {
     float: right;
-    margin-top: 3vh;
     width: 15%;
     height: 5vh;
     font-size: 1.2rem;

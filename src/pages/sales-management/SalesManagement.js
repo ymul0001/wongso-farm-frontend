@@ -72,13 +72,13 @@ const SalesManagement = () => {
                         backgroundColor: "#A0865E",
                         color: "#ffffff",
                         height: "5vh",
-                        fontSize: "18px"
+                        fontSize: "14px"
                     }} 
                     variant="contained" onClick={() => {navigate('create')}}>Create New</Button>
                 <SearchBar
                     style={{
-                        width: "35%",
-                        height: "4.9vh",
+                        width: "45%",
+                        height: "5vh",
                         border: "none"
                     }}
                     placeholder="search for sales by customers"
@@ -149,12 +149,12 @@ const SalesManagement = () => {
                             headerStyle: {
                                 backgroundColor: '#E7E7E7',
                                 fontWeight: 700,
-                                fontSize: '1.2rem',
+                                fontSize: '1rem',
                                 color: '#80715c'
                             },
                             rowStyle: {
                                 backgroundColor: '#F9F9FC',
-                                fontSize: '1.2rem'
+                                fontSize: '.9rem'
                             },
                             actionsColumnIndex: -1
                         }}
