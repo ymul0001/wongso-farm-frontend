@@ -126,8 +126,8 @@ const CustomerManagement = () => {
                                             customer_initial: row.customer_initial,
                                             customer_name: row.customer_name,
                                             customer_address: (row.customer_address != null) ? row.customer_address : "-",
-                                            total_order: row.total_order,
-                                            total_money: row.total_money
+                                            total_order: row.total_order.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                                            total_money: row.total_money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                                         }));
                                         resolve({
                                             data: selectedResults,
