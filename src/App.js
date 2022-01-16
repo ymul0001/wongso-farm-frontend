@@ -12,6 +12,8 @@ import SalesUpdate from './pages/sales-management/update/SalesUpdate';
 import Expenditure from './pages/expenditure/Expenditure';
 import ExpenditureCreate from './pages/expenditure/create/ExpenditureCreate';
 import ExpenditureUpdate from './pages/expenditure/update/ExpenditureUpdate';
+import Invoice from './pages/invoice/Invoice';
+import InvoiceDetails from './pages/invoice/details/InvoiceDetails';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
               <Route path='sales' element={<SalesManagement/>}/>
               <Route path='sales/create' element={<SalesCreate title='Sales Management > Create' btnLabel='CREATE'/>}/>
               <Route path='sales/update/:id' element={<SalesUpdate title='Sales Management > Update' btnLabel='UPDATE'/>}/>
+              <Route path='invoice' element={<Invoice btnLabel='GENERATE INVOICE'/>}/>
+              <Route path='invoice/details' element={<InvoiceDetails title='Invoice > Details' btnLabel='PRINT'/>}/>
               <Route path='expenditure' element={<Expenditure/>}/>
               <Route path='expenditure/create' element={<ExpenditureCreate title='Expenditure > Create' btnLabel='CREATE'/>}/>
               <Route path='expenditure/update/:id' element={<ExpenditureUpdate title='Expenditure > Update' btnLabel='UPDATE'/>}/>
