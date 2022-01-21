@@ -1,0 +1,23 @@
+.invoice-details {
+    max-height: 100vh;
+    overflow: scroll;
+}
+
+.invoice-template-container {
+    width: 96%;
+    margin: auto;
+}
+
+.print-btn {
+    width: 15%;
+    height: 5vh;
+    margin-left: 3%;
+    margin-top: 5vh;
+    font-size: 1.2rem;
+    border: none;
+    color: #ffffff;
+    background-color: rgb(197, 155, 78);
+    transition: all .1s;
+    font-size: .9rem !important;
+    margin-bottom: 5vh;
+}

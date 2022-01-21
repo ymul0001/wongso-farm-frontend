@@ -1,6 +1,5 @@
 import {React, useState, useEffect} from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
-import AsyncSelect from 'react-select/async';
 import axios from 'axios';
 import Header from '../../../components/header/Header';
 import PromptModal from '../../../components/PromptModal';

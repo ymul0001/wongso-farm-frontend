@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
+
+.invoice-form-container {
+    background-color: #F1E7D7;
+    height:45vh;
+    margin-top: 5vh;
+}
+
+.invoice-form {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3vh;
+}
+
+.invoice-title {
+    color: #66553C;
+    font-size: 1.5rem;
+}
+
+.invoice-input {
+    display: block;
+    width: 40% !important;
+    height: 5vh;
+    border: none;
+    padding-left: 8px;
+}
+
+.invoice-input-label {
+    font-size: .8rem;
+    margin-bottom: 1vh;
+}
+
+.error-active {
+    color: #D8000C;
+    font-family: sans-serif;
+    opacity: 100;
+}
+
+.error-inactive {
+    color: #D8000C;
+    font-family: sans-serif;
+    opacity: 0;
+}

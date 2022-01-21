@@ -1,5 +1,6 @@
 import React from 'react';
 import {AiFillPieChart, AiOutlineBarChart, AiOutlineLogout, AiFillBook} from 'react-icons/ai';
+import {FaFileInvoice} from 'react-icons/fa';
 import { BsFillPersonFill } from 'react-icons/bs';
 
 export const SidebarData = [
@@ -22,6 +23,12 @@ export const SidebarData = [
         icon:  <AiOutlineBarChart/>
     },
     {
+        title: 'Invoice',
+        path: 'invoice',
+        cName: 'nav-text',
+        icon: <FaFileInvoice/>
+    },
+    {
         title: 'Expenditures',
         path: 'expenditure',
         cName: 'nav-text',
@@ -32,5 +39,5 @@ export const SidebarData = [
         path: 'login',
         cName: 'nav-text',
         icon: <AiOutlineLogout/>
-    }
+    },
 ]
