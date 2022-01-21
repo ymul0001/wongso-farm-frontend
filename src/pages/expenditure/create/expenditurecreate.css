@@ -5,9 +5,17 @@
     margin-top: 3vh;
 }
 
+.react-datepicker__input-container input {
+    display: block;
+    width: 30% !important;
+    height: 5vh;
+    border: none;
+    padding-left: 8px;
+}
+
 .expenditure-form-container {
     background-color: #F1E7D7;
-    height:70vh;
+    height:80vh;
     margin-top: 5vh;
 }
 

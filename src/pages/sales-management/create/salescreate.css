@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
 
+.details {
+    max-height: 100vh;
+    overflow: scroll;
+}
+
+.react-datepicker__input-container input {
+    display: block;
+    width: 40% !important;
+    height: 5vh;
+    border: none;
+    padding-left: 8px;
+}
+
 .date-container {
     margin-top: 3vh;
 }

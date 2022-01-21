@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from 'react';
 import { useNavigate, useLocation, Navigate } from 'react-router-dom';
 import axios from "axios";
+import DatePicker from 'react-datepicker';
 import Header from '../../../components/header/Header';
 import PromptModal from '../../../components/PromptModal';
 import TwoWayModal from '../../../components/modal/TwoWayModal';
@@ -9,12 +10,14 @@ import './expenditureupdate.css';
 const ExpenditureUpdate = (props) => {
     const { state } = useLocation();
     const navigate = useNavigate();
-    const [date, setDate] = useState(state.expense_date_unformatted.slice(0,19).replace('T',' '));
+    const [date, setDate] = useState(new Date(state.expense_date_unformatted));
+    const [time, setTime] = useState(state.expense_date_unformatted.replace('T',' ').slice(11,19));
     const [totalExpense, setTotalExpense] = useState(state.total_expense.replace(/,/g, ''));
     const [productiveExpense, setProductiveExpense] = useState(state.productive_expense.replace(/,/g, ''));
     const [expenseNote, setExpenseNote] = useState((state.expense_note === "-") ? "" : state.expense_note);
     const [submitButtonState, setSubmitButtonState] = useState("disabled");
     const [dateState, setDateState] = useState("");
+    const [timeState, setTimeState] = useState("");
     const [totalExpenseState, setTotalExpenseState] = useState("");
     const [productiveExpenseState, setProductiveExpenseState] = useState("");
     const [modalShow, setModalShow] = useState(false);
@@ -25,6 +28,10 @@ const ExpenditureUpdate = (props) => {
     
     const getExpenseDate = (e) => {
         setDate(e.target.value);
+    }
+
+    const getExpenseTime = (e) => {
+        setTime(e.target.value);
     }
 
     const getTotalExpense = (e) => {
@@ -43,7 +50,7 @@ const ExpenditureUpdate = (props) => {
         e.preventDefault();
         axios.put(`https://wongso-farm-api.herokuapp.com/v1/expenditure/updateById?expenseid=${state.expense_id}`, {
             userid: sessionStorage.getItem("userId"),
-            expensedate: date,
+            expensedate: date.toISOString().substring(0,10) + ' ' + time,
             totalexpense: totalExpense,
             productiveexpense: productiveExpense,
             expensenote: expenseNote
@@ -61,7 +68,7 @@ const ExpenditureUpdate = (props) => {
     }
 
     const enableExpenditureBtn = () => {
-        if (date.trim().length > 0 && totalExpense.trim().length > 0 && productiveExpense.length > 0) {
+        if (date != null && time.trim().length > 0 && totalExpense.trim().length > 0 && productiveExpense.length > 0) {
             setSubmitButtonState("enabled");
         }
         else {
@@ -75,8 +82,12 @@ const ExpenditureUpdate = (props) => {
     }
 
     useEffect(() => {
-        (date === "") ? setDateState("error-active") : setDateState("error-inactive");
+        (date == null) ? setDateState("error-active") : setDateState("error-inactive");
     }, [date]);
+
+    useEffect(() => {
+        (time === "") ? setDateState("error-active") : setTimeState("error-inactive");
+    }, [time]);
 
     useEffect(() => {
         (totalExpense === "") ? setTotalExpenseState("error-active") : setTotalExpenseState("error-inactive");
@@ -102,8 +113,13 @@ const ExpenditureUpdate = (props) => {
                     <h2 className="expenditure-title">Expenditure Information</h2>
                     <div className="date-container">
                         <label htmlFor="expense-date" className="expenditure-input-label">DATE</label> 
-                        <input type="text" id="date" name="expense-date" className="expenditure-input" placeholder="ex: 2021-11-13 14:47:28" value={date} onChange={getExpenseDate}/>
+                        <DatePicker selected={date} onChange={(date) => setDate(date)} />
                         <span className={dateState}>expenditure date cannot be empty</span>
+                    </div>
+                    <div className="time-container">
+                        <label htmlFor="expense-time" className="expenditure-input-label">SALES TIME</label> 
+                        <input type="text" id="expnense-time" name="expense-time" className="expenditure-input" value={time} placeholder="ex: 14:47:28" onChange={getExpenseTime}/>
+                        <span className={timeState}>sales time cannot be empty</span>
                     </div>
                     <div className="total-expense-container">
                         <label htmlFor="total-expense" className="expenditure-input-label">TOTAL EXPENSE</label>

@@ -1,22 +1,26 @@
 import {React, useState, useEffect} from 'react';
 import { useNavigate, Navigate } from 'react-router-dom';
 import axios from 'axios';
+import DatePicker from 'react-datepicker';
 import Header from '../../../components/header/Header';
 import PromptModal from '../../../components/PromptModal';
 import TwoWayModal from '../../../components/modal/TwoWayModal';
+import "react-datepicker/dist/react-datepicker.css";
 import './salescreate.css';
 
 const SalesCreate = (props) => {
     const navigate = useNavigate();
     const [submitButtonState, setSubmitButtonState] = useState("disabled");
     const [customerNames, setCustomerNames] = useState([]);
-    const [salesDate, setSalesDate] = useState("initial");
+    const [salesDate, setSalesDate] = useState(new Date());
+    const [salesTime, setSalestime] = useState("initial");
     const [customerName, setCustomerName] = useState("initial");
     const [customerId, setCustomerId] = useState("");
     const [totalOrder, setTotalOrder] = useState("initial");
     const [pricePerUnit, setPricePerUnit] = useState("initial");
     const [level, setLevel] = useState("piece");
     const [salesDateState, setSalesDateState] = useState("");
+    const [salesTimeState, setSalesTimeState] = useState("");
     const [customerNameState, setCustomerNameState] = useState("");
     const [totalOrderState, setTotalOrderState] = useState("");
     const [pricePerUnitState, setPricePerUnitState] = useState("");
@@ -33,8 +37,8 @@ const SalesCreate = (props) => {
         })
     } 
 
-    const getSalesDate = (e) => {
-        setSalesDate(e.target.value);
+    const getSalesTime = (e) => {
+        setSalestime(e.target.value);
     }
 
     const getCustomerName = (e) => {
@@ -61,7 +65,7 @@ const SalesCreate = (props) => {
     }
 
     const enableSalesBtn = () => {
-        if (salesDate.trim().length > 0 && customerName.trim().length > 0 && totalOrder.length > 0 && pricePerUnit.length > 0) {
+        if (customerName.trim().length > 0 && totalOrder.length > 0 && pricePerUnit.length > 0) {
             if (salesDate === "initial" || customerName === "initial" || totalOrder === "initial" || pricePerUnit === "initial") {
                 setSubmitButtonState("disabled");
             }
@@ -79,7 +83,7 @@ const SalesCreate = (props) => {
         axios.post('https://wongso-farm-api.herokuapp.com/v1/sales/create', {
             customerid: customerId,
             userid: sessionStorage.getItem("userId"),
-            salesdate: salesDate,
+            salesdate: salesDate.toISOString().substring(0,10) + ' ' + salesTime,
             level: level,
             qty: totalOrder,
             priceperitem: pricePerUnit,
@@ -103,8 +107,12 @@ const SalesCreate = (props) => {
     }, [])
 
     useEffect(() => {
-        (salesDate === "") ? setSalesDateState("error-active") : setSalesDateState("error-inactive");
+        (salesDate == null) ? setSalesDateState("error-active") : setSalesDateState("error-inactive");
     }, [salesDate]);
+
+    useEffect(() => {
+        (salesTime === "") ? setSalesTimeState("error-active") : setSalesTimeState("error-inactive");
+    })
 
     useEffect(() => {
         (customerName === "") ? setCustomerNameState("error-active") : setCustomerNameState("error-inactive");
@@ -140,8 +148,13 @@ const SalesCreate = (props) => {
                 <h2 className="sales-title">Sales Information</h2>
                 <div className="date-container">
                     <label htmlFor="sales-date" className="sales-input-label">SALES DATE</label> 
-                    <input type="text" id="sales-date" name="sales-date" className="sales-input" placeholder="ex: 2021-11-13 14:47:28" onChange={getSalesDate}/>
+                    <DatePicker selected={salesDate} onChange={(date) => setSalesDate(date)} />
                     <span className={salesDateState}>sales date cannot be empty</span>
+                </div>
+                <div className="time-container">
+                    <label htmlFor="sales-time" className="sales-input-label">SALES TIME</label> 
+                    <input type="text" id="sales-time" name="sales-time" className="sales-input" placeholder="ex: 14:47:28" onChange={getSalesTime}/>
+                    <span className={salesTimeState}>sales time cannot be empty</span>
                 </div>
                 <div className="customer-name-container">
                     <label htmlFor="customer-name" className="sales-input-label">CUSTOMER NAME</label>
